@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.course1.entities.User;
 
 @RestController
-@RequestMapping(value = "/users") //Este será o nome do meu recurso
+@RequestMapping(value ="/users") //Este será o nome do meu recurso
 public class UserResource {
 	
 	@GetMapping
