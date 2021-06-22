@@ -14,7 +14,7 @@ public class UserResource {
 	@GetMapping
 	public ResponseEntity<User> findAll(){ //O tipo d minha resposta vai ser a minha classe User;
 		
-		User u = new User(1L,"Maria", "Maria@gmail.com","999999", "12345");
+		User u = new User(1L,"Maria", "maria@gmail.com","999999", "12345");
 		return ResponseEntity.ok().body(u);
 	}
 
