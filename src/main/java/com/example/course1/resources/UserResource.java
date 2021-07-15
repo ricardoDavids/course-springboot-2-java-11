@@ -19,19 +19,21 @@ public class UserResource {
 	@Autowired
 	private UserService service;
 	
-	@GetMapping
+	@GetMapping // --> Isto quer dizer que iremos fazer uma requsição do tipo get
 	public ResponseEntity<List<User>> findAll(){ //O tipo d minha resposta vai ser a minha classe User;
 		
 		List<User>list= service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<User> findById(@PathVariable Long id){
+	@GetMapping(value = "/{id}") // Isto quer dizer que a minha requisição vai aceitar um "ID" dentro URL
+	public ResponseEntity<User> findById(@PathVariable Long id){ 
 		User obj= service.findById(id);
 				return ResponseEntity.ok().body(obj);
 	}
 
+	//Notas: ResponseEntity<User>, aqui será do tipo user porque agora vai retornar apenas um User; 
+	//Notas: findById(@PathVariable Long id) --> Este findById vai receber o parametro de URL @GetMapping(value = "/{id}")
 }
 
 
